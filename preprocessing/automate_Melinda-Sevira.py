@@ -58,6 +58,7 @@ def load_data(save_raw: bool = True, raw_dir: str = '../smsa_raw') -> pd.DataFra
         DataFrame gabungan semua split.
     """
     logger.info("Memuat dataset SmSA dari HuggingFace...")
+    # load dataset dengan trust_remote_code
     dataset = load_dataset('indonlp/indonlu', 'smsa', trust_remote_code=True)
 
     df_train = pd.DataFrame(dataset['train'])
